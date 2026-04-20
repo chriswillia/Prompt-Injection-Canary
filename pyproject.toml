@@ -1,0 +1,37 @@
+[project]
+name = "prompt_injection_canary"
+version = "0.2.0"
+description = "A Python runner for adversarial prompt-injection canary tests with JUnit XML, Markdown, and JSON reports."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [ { name = "GitHub Copilot" } ]
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+prompt_injection_canary = "prompt_injection_canary.runner:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["prompt_injection_canary*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

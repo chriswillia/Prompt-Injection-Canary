@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime artifacts produced by the canary
+junit.xml
+summary.md
+results.json
+
+# Editors
+.vscode/
+.idea/
